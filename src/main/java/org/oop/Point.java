@@ -8,15 +8,15 @@ public class Point {
         this.y = y;
     }
 
-    public static double distance(Point from, Point to) {
-        return Math.hypot(difference(from.x, to.x), difference(from.y, to.y));
+    public double distance(Point anotherPoint) {
+        return Math.hypot(difference(this.x, anotherPoint.x), difference(this.y, anotherPoint.y));
     }
 
-    public static double direction(Point from, Point to){
-        return Math.atan2(difference(to.y, from.y), difference(to.x, from.x));
+    public double direction(Point anotherPoint){
+        return Math.atan2(difference(anotherPoint.y, this.y), difference(anotherPoint.x, this.x));
     }
 
-    private static double difference(double pointOne, double pointTwo)
+    private double difference(double pointOne, double pointTwo)
     {
         return pointOne - pointTwo;
     }
